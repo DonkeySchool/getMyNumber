@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="style.css?3" />
+    <title>Donkey Devine Le Nombre</title>
+  </head>
+  <body>
+    <header>
+      <button class="btn play-again">Rejouer</button>
+      <button class="btn play-easy">Easy</button>
+      <button class="btn play-medium">Medium</button>
+      <button class="btn play-hard">Hard</button>
+    </header>
+    <main>
+      <section class="section top-section">
+        <h1>Devine Le Nombre</h1>
+        <p class="between">(Entre 1 et 20)</p>
+        <p class="listnumbers"></p>
+        <p class="message"></p>
+        <div class="number-centerer flip-container">
+          <div class="flipper number-container">
+            <div class="front flipper-side">
+              <div class="number"></div>
+              <img class="donkey-image" src="assets/donkey.png" alt="donkey">
+            </div>
+            <div class="back flipper-side">
+              <div class="secret-number"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section bottom-section">
+        <div class="form">
+          <input type="number" class="guess" />
+          <button class="btn check">Vérfier</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="scoreboard">
+        <p class="label-score">💯 Score: <span class="score"></span></p>
+        <p class="label-highscore">
+          🥇 Meilleur score: <span class="highscore"></span>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

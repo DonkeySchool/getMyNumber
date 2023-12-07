@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  color: #4d4d4d;
+  background-color: #f5f5f5;
+  /* background-color: #329e11; */
+}
+
+.success {
+  background-color: #07a54c;
+  color: #ffffff;
+}
+
+.loss {
+  background-color: #ce0f0f;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* LAYOUT */
+header {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 2rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 4rem;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-section {
+  border-bottom: 7px solid #4d4d4d;
+  padding-bottom: 1rem;
+  height: 45vh;
+}
+
+.bottom-section {
+  padding-bottom: 7rem;
+  height: 55vh;
+}
+
+.form {
+  text-align: center;
+}
+
+
+/* ELEMENTS STYLE */
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.between {
+  font-size: 2rem;
+  margin: 1rem 0 3rem 0;
+}
+
+.scoreboard {
+  font-size: 2rem;
+}
+
+.message {
+  font-size: 2rem;
+  
+}
+
+.number-centerer {
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.number-container {
+  width: 100%;
+  height: 100%;
+}
+
+.number.hide {
+  display: none;
+}
+
+.donkey-image {
+  display: none;
+  height: 70%;
+}
+
+.donkey-image.show {
+  display: inline-block;
+}
+
+.flipper-side {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  border-radius: 50%;
+  border: 7px solid #4d4d4d;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .6s ease-in-out;
+}
+
+.back {
+  background: #07a54c;
+  color: #ffffff;
+}
+
+.guess {
+  background: none;
+  border: 4px solid #4d4d4d;
+  color: inherit;
+  font-size: 3rem;
+  padding: 1.5rem;
+  width: 20rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  border: none;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  border: 4px solid #4d4d4d;
+  font-size: 2rem;
+  font-family: inherit;
+  line-height: 1rem;
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: #dbd9d9;
+}
+
+.user-guesses-container {
+  display: none;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  font-size: 2rem;
+}
+
+.user-guesses-container.show {
+  display: block;
+}
+
+.choose-dificulty-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose-dificulty-screen.hide {
+  display: none;
+}
+
+.choose-dificulty-screen-title {
+  margin-bottom: 3rem;
+}
+
+.btn-difficulty {
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+}
+
+.btn-difficulty:last {
+  margin-right: 0;
+}
+
+.btn-difficulty:first {
+  margin-left: 0;
+}
+
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .btn {
+    padding: 2rem 2rem;
+  }
+
+  .btn-difficulty {
+    margin-right: 3rem;
+    padding: 4rem 6rem;
+  }
+
+  .number-centerer {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .flipper-side {
+    font-size: 8rem;
+  }
+
+  .guess {
+    font-size: 5rem;
+    padding: 2rem;
+    width: 25rem;
+  }
+
+  .bottom-section {
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+  }
+
+  .scoreboard {
+    font-size: 3rem;
+  }
+}
+
+
+
+/* ANIMATIONS */
+.error-animation {
+  background-color: #ce0f0f;
+  color: #ffffff;
+  animation: kf_shake 0.4s 1 linear;
+}
+@keyframes kf_shake {
+  0% { transform: translate(30px); }
+  20% { transform: translate(-30px); }
+  40% { transform: translate(15px); }
+  60% { transform: translate(-15px); }
+  80% { transform: translate(8px); }
+  100% { transform: translate(0px); }
+}
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flipper.reveal {
+		transform: rotateY(180deg);
+	}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.guess {
+  transition: transform 2s;
+}
+
+.guess.extend {
+  transform: scaleX(200%);
+}
+
+.listnumbers {
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+
+.egal {
+  transition: transform 2s;
+}
+
+.divChoise {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top :15rem;
+  text-align: center;
+  font-size: 3rem;
+  margin: auto;
+  
+}
